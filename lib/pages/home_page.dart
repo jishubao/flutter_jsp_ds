@@ -20,7 +20,8 @@ class _HomePageState extends State<HomePage>
   int page = 1;
   List<Map> hotGoodsList = [];
 
-  GlobalKey<RefreshFooterState> _footerKey = new GlobalKey<RefreshFooterState>();
+  GlobalKey<RefreshFooterState> _footerKey =
+      new GlobalKey<RefreshFooterState>();
 
   @override
   void initState() {
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage>
         title: Text('百姓生活+'),
       ),
       body: FutureBuilder(
-        future: request('homePageCentent', formData: formData),
+        future: request('homePageCentent', formData: formData, pos: '首页'),
         builder: (context, snapshot) {
           // hasData 是否有数据
           if (snapshot.hasData) {
@@ -100,7 +101,6 @@ class _HomePageState extends State<HomePage>
                     page++;
                   });
                 });
-
               },
             );
           } else {
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage>
   // 获取热销商品数据
   void _getHotGoods() {
     var formData = {'page': page};
-    request('homePageBelowConten', formData: formData).then((val) {
+    request('homePageBelowConten', formData: formData, pos: '首页分页').then((val) {
       var data = json.decode(val.toString());
       List<Map> newGoodsList = (data['data'] as List).cast();
       setState(() {

@@ -4,9 +4,9 @@ import 'dart:io';
 import '../config/service_url.dart';
 
 // 获取主页主题内容
-Future request(url, {formData}) async {
+Future request(url, {formData, pos}) async {
   try {
-    print('开始获取数据........');
+    print('开始获取数据....$pos....');
     Response response;
     Dio dio = new Dio();
     dio.options.contentType =

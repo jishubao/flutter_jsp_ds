@@ -31,14 +31,18 @@ class _IndexPageState extends State<IndexPage> {
     ),
   ];
 
+
+  int currentIndex = 0;
+  // var _controller = PageController(
+  //   initialPage: 0,
+  // );
+
   final List<Widget> tabBodies = [
     HomePage(),
     CategoryPage(),
     CartPage(),
     MemberPage(),
   ];
-
-  int currentIndex = 0;
 
   @override
   void initState() {
@@ -54,15 +58,27 @@ class _IndexPageState extends State<IndexPage> {
 
     return Scaffold(
       backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
-      body: IndexedStack(
-        index: currentIndex,
-        children: tabBodies,
-      ),
+      // body: PageView(
+      //   controller: _controller,
+      //   physics: NeverScrollableScrollPhysics(), //禁止滚动
+      //   children: <Widget>[
+      //     HomePage(),
+      //     CategoryPage(),
+      //     CartPage(),
+      //     MemberPage(),
+      //   ],
+      // ),
+      // body: IndexedStack(
+      //   index: currentIndex,
+      //   children: tabBodies,
+      // ),
+      body: tabBodies[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         items: buttomBtns,
         onTap: (index) {
+          // _controller.jumpToPage(index);
           setState(() {
             currentIndex = index;
           });
