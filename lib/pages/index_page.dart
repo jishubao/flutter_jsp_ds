@@ -68,11 +68,11 @@ class _IndexPageState extends State<IndexPage> {
       //     MemberPage(),
       //   ],
       // ),
-      // body: IndexedStack(
-      //   index: currentIndex,
-      //   children: tabBodies,
-      // ),
-      body: tabBodies[currentIndex],
+      body: IndexedStack(
+        index: currentIndex,
+        children: tabBodies,
+      ),
+      // body: tabBodies[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
