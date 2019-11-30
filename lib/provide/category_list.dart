@@ -9,5 +9,11 @@ class CategpryListProvide with ChangeNotifier {
     goodsList = list;
     notifyListeners();
   }
+  
+  // 点击大类时 更换商品列表
+  getMoreList(List<CateGroyListData> list){
+    goodsList.addAll(list);
+    notifyListeners();
+  }
 
 }

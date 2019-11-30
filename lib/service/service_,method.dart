@@ -6,11 +6,10 @@ import '../config/service_url.dart';
 // 获取主页主题内容
 Future request(url, {formData, pos}) async {
   try {
-    print('开始获取数据....$pos....');
+    print('开始获取数据....$pos....   ----------- $url --------- ');
     Response response;
     Dio dio = new Dio();
-    dio.options.contentType =
-        ContentType.parse('application/x-www-form-urlencoded');
+    dio.options.contentType = ContentType.parse('application/x-www-form-urlencoded');
     if (formData == null) {
       response = await dio.post(servicePath[url]);
     } else {

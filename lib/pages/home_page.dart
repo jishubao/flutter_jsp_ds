@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage>
                 loadReadyText: '松开刷新',
                 loadingText: '正在加载',
                 loadedText: '刷新完成',
-                noMoreText: '没有更多',
+                noMoreText: '刷新完成',
               ),
               child: ListView(
                 children: <Widget>[
@@ -332,7 +332,7 @@ class Recommend extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        height: ScreenUtil().setHeight(330),
+        height: ScreenUtil().setHeight(350),
         width: ScreenUtil().setWidth(250),
         padding: EdgeInsets.all(8.0),
         decoration: BoxDecoration(
@@ -360,7 +360,7 @@ class Recommend extends StatelessWidget {
 
   Widget _recommendList() {
     return Container(
-      height: ScreenUtil().setHeight(280),
+      height: ScreenUtil().setHeight(350),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: recommendList.length,
@@ -374,7 +374,6 @@ class Recommend extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenUtil().setHeight(330),
       margin: EdgeInsets.only(top: 10.0),
       child: Column(
         children: <Widget>[
